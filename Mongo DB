@@ -1,0 +1,13 @@
+echo "# Lucas" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/lucasdasneves/Lucas.git
+git push -u origin master
+db.albuns.insert({"nome": "The Dark Side of The Moon", "data": mew Date(1973, 3, 29)})
+db.albuns.insert({"nome" : "Master of Puppets", "dataLancamento" : new Date(1986, 2, 3), "duracao" : 3286})
+db.albuns.insert({"nome" : "...And Justice for All", "dataLancamento" : new Date(1988, 7, 25), "duracao" : 3929})
+db.albuns.insert({"nome" : "Among the Living", "produtor" : "Eddie Kramer"})
+db.albuns.insert({"nome" : "Nevermind", "artista" : "Nirvana", "estudioGravacao" : ["Sound City Studios", "Smart Studios (Madison)"], "dataLancamento" : new Date(1992, 0, 11)})
+db.albuns.insert({"nome" : "Reign in Blood", "dataLancamento" : new Date(1986, 9, 7), "artista" : "Larry Carroll", "duracao" : 1738})
+db.albuns.insert({"nome" : "Seventh Son of a Seventh Son", "artista" : "Iron Maiden", "produtor" : "Martin Birch", "estudioGravacao" : "Musicland Studios", "dataLancamento" : new Date(1988, 3, 11)})
