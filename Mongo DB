@@ -4,6 +4,7 @@ git add README.md
 git commit -m "first commit"
 git remote add origin https://github.com/lucasdasneves/Lucas.git
 git push -u origin master
+
 db.albuns.insert({"nome": "The Dark Side of the Moon", "data": new Date(1973, 3, 29)})
 db.albuns.insert({"nome" : "Master of Puppets", "dataLancamento" : new Date(1986, 2, 3), "duracao" : 3286})
 db.albuns.insert({"nome" : "...And Justice for All", "dataLancamento" : new Date(1988, 7, 25), "duracao" : 3929})
@@ -12,9 +13,27 @@ db.albuns.insert({"nome" : "Nevermind", "artista" : "Nirvana", "estudioGravacao"
 db.albuns.insert({"nome" : "Reign in Blood", "dataLancamento" : new Date(1986, 9, 7), "artista" : "Larry Carroll", "duracao" : 1738})
 db.albuns.insert({"nome" : "Seventh Son of a Seventh Son", "artista" : "Iron Maiden", "produtor" : "Martin Birch", "estudioGravacao" : "Musicland Studios", "dataLancamento" : new Date(1988, 3, 11)})
 
-//db."colectionname".find() show dbs ; use; db.albuns.find().pretty(); db.albuns.find({"nome":"Seventh Son of Seventh Son"});
+//db."colectionname".find()~; show dbs ; use; db.albuns.find().pretty(); db.albuns.find({"nome":"Seventh Son of Seventh Son"});
 db.albuns.find({"nome": /of/}).pretty(); db.albuns.remove(); show colletctions; db.albuns.update({Criteria},{$set: {Settings}}); $gt >;
 $gte >=; $lt <; $lte <=;$in between; db.albuns.find({"duracao":{"$lt":1800}}).pretty(); db.albuns.find(
 ... {$and : [{"dataLancamento" : {$gte : new Date(1986, 0, 1)}},
 ... {"dataLancamento" : {$lt : new Date(1987, 0, 1)}}]}
 ... ).pretty()
+
+
+db.artistas.insert([ 
+{"nome" : "Metallica", "id" : "1"}, 
+{"nome" : "Megadeath", "id" : "2"}, 
+{"nome" : "Slayer", "id" : "3"}, 
+{"nome" : "Anthrax", "id" : "4"}, 
+{"nome" : "Iron Maiden", "id" : "5"}, 
+{"nome" : "Nirvana", "id" : "6"}, 
+{"nome" : "Pink Floyd", "id" : "7"}])
+
+db.albuns.update( {"nome" : "...And Justice for All"}, {$set : {"artista_id" : "1"}})
+db.albuns.update( {"nome" : "Among the Living"}, {$set : {"artista_id" : "4"}} )
+db.albuns.update( {"nome" : "Nevermind"}, {$set : {"artista_id" : "6"}} )
+db.albuns.update( {"nome" : "Reign in Blood"}, {$set : {"artista_id" : "3"}} )
+db.albuns.update( {"nome" : "Seventh Son of a Seventh Son"}, {$set : {"artista_id" : "5"}})
+db.albuns.update( {"nome" : "The Dark Side of the Moon"}, {$set : {"artista_id" : "7"}})
+
