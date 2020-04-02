@@ -5,6 +5,13 @@ git commit -m "first commit"
 git remote add origin https://github.com/lucasdasneves/Lucas.git
 git push -u origin master
 
+
+// Using JavaScript for MongoDB for consultation
+var artista = db.artistas.findOne({"nome" : "Metallica"}) //Consulting in MongoDB using a variable
+
+var albuns = db.albuns.find({"artista_id" : artista.id})
+
+
 db.albuns.insert({"nome": "The Dark Side of the Moon", "data": new Date(1973, 3, 29)})
 db.albuns.insert({"nome" : "Master of Puppets", "dataLancamento" : new Date(1986, 2, 3), "duracao" : 3286})
 db.albuns.insert({"nome" : "...And Justice for All", "dataLancamento" : new Date(1988, 7, 25), "duracao" : 3929})
@@ -12,6 +19,9 @@ db.albuns.insert({"nome" : "Among the Living", "produtor" : "Eddie Kramer"})
 db.albuns.insert({"nome" : "Nevermind", "artista" : "Nirvana", "estudioGravacao" : ["Sound City Studios", "Smart Studios (Madison)"], "dataLancamento" : new Date(1992, 0, 11)})
 db.albuns.insert({"nome" : "Reign in Blood", "dataLancamento" : new Date(1986, 9, 7), "artista" : "Larry Carroll", "duracao" : 1738})
 db.albuns.insert({"nome" : "Seventh Son of a Seventh Son", "artista" : "Iron Maiden", "produtor" : "Martin Birch", "estudioGravacao" : "Musicland Studios", "dataLancamento" : new Date(1988, 3, 11)})
+db.albuns.insert( {"nome" : "Somewhere Far Beyond", "dataLancamento" : new Date(1992, 5, 30), "duracao" : 3328, "artista" : {"nome" : "Blind Guardian"}});
+db.albuns.insert( {"nome" : "Imaginations from the Other Side", "dataLancamento" : new Date(1995, 3, 4), "duracao" : 2958, "artista" : {"nome" : "Blind Guardian"}}); 
+
 
 //db."colectionname".find()~; show dbs ; use; db.albuns.find().pretty(); db.albuns.find({"nome":"Seventh Son of Seventh Son"});
 db.albuns.find({"nome": /of/}).pretty(); db.albuns.remove(); show colletctions; db.albuns.update({Criteria},{$set: {Settings}}); $gt >;
@@ -36,4 +46,6 @@ db.albuns.update( {"nome" : "Nevermind"}, {$set : {"artista_id" : "6"}} )
 db.albuns.update( {"nome" : "Reign in Blood"}, {$set : {"artista_id" : "3"}} )
 db.albuns.update( {"nome" : "Seventh Son of a Seventh Son"}, {$set : {"artista_id" : "5"}})
 db.albuns.update( {"nome" : "The Dark Side of the Moon"}, {$set : {"artista_id" : "7"}})
+
+db.albuns.find({"artista" : {"nome" : "Blind Guardian"}}).pretty()
 
